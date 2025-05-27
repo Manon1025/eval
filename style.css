@@ -1,0 +1,95 @@
+/* *HEADER */
+/* ! Fond image de la voiture pour le HEADER */
+    /* Ajout de l'image comme fond pour le header sans de repeat et en mode cover comme les voitures */
+.bg-cover{
+    background-image: url('/assets/f927ae20-2779-4191-9330-5ccb32ce2f05.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* ! Mise en forme du message de bienvenue */
+
+.message{
+    margin-top: 20px;
+    margin-bottom: 20%;
+}
+
+/* ! MIse en forme de la navbar */
+
+    /*Réduction de la taille de la navigation  */
+.navbar-collapse {
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+}
+
+    /*Le font de base de bootstrap transformer en transparent */
+.navbar{
+    background-color: transparent !important;
+
+}
+
+    /* Quand le hamburger est activer j'ajoute le font blanc */
+.navbar-collapse {
+    background: rgba(255, 255, 255, 0.642);
+    border-radius: 8px !important;
+}
+
+    /* Bordure pour l'icon */
+.navbar-toggler {
+   border-color: rgba(254, 254, 254, 0.7);  
+}
+    /* Changement de la couleur de l'image SVG */
+.bi-list {
+    fill: white;
+}
+
+
+/* ! Mise en forme du formulaire  */
+    /* Font pour le formulaire */
+.bg-custom{
+    background-color: rgb(255, 255, 255, 0.6)
+}
+    /* font pour le bouton de submit */
+.btn-submit{
+    margin-bottom: 0;
+    width: 100%;
+    height: auto;
+    background-color:rgba(51, 168, 74, 0.9) ;
+}
+    /* Enléve la bordure prédefini des inputs */
+input {
+    border: 0px;
+}
+
+/* *MAIN */
+/* !Filter des prix */
+.form-select{
+    border: 1px rgba(51, 51, 51, 0.799) solid;
+}
+
+/* !Bouton de réservation */   
+    /* Ajout d'un fond */
+.btn-reservation{
+    background-color: rgba(51, 168, 74);
+    color: white;
+    border: rgb(38, 132, 57);
+    box-shadow: 
+        inset -2px -13px 10px 3px rgb(38, 132, 57);
+}
+    /* Génération d'un animation */
+.btn-reservation:hover{
+        background-color: rgb(49, 212, 106);
+    color: white;
+    border: rgb(38, 132, 57);
+    box-shadow: 
+        inset -2px -13px 10px 3px rgba(51, 168, 74);
+}
+
+    /* Effet de cursor */
+.bi-caret-left-fill:hover,
+.bi-caret-right-fill:hover {
+    cursor: pointer;
+}
+
+
