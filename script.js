@@ -1,31 +1,26 @@
-// TODO Récupération du container
-const container = document.querySelector('.container-cars')
+// TODO création des const et des let
+const container = document.querySelector('.container-cars');
+const url = "http://localhost:3000/cars";
+let allCars = [];
 
-// TODO récupération de l'API
-const url = "http://localhost:3000/cars"
-
+// TODO récupération de l'api crée 
 async function getCars() {
     try {
-        const res = await fetch(url)
-        const data = await res.json()
-        console.log(data)
-        return data
+        const res = await fetch(url);
+        const data = await res.json();
+        return data;
     } catch (error) {
-        console.log("Erreur", error)
+        console.log("Erreur", error);
+        return [];
     }
 }
 
-
-// TODO Affichage
-async function affiCars() {
-    const cars = await getCars()
-
-    // !Création de la boucle qui génére chaque voiture
+// TODO fonction d'affichage de l'api des voitures
+function renderCars(cars) {
+    container.innerHTML = "";
     cars.forEach(car => {
-
-        // !Creation d'un div
-        const div = document.createElement('div')
-        div.setAttribute('class', 'mb-5 mt-3')
+        const div = document.createElement('div');
+        div.setAttribute('class', 'mb-5 mt-3');
         div.innerHTML = `
             <div class="d-flex gap-5 p-5 p-sm-1">
                 <div class="d-flex align-items-center gap-3">
@@ -45,11 +40,25 @@ async function affiCars() {
                 </div>
             </div>
         `;
-
-        // !Incoporation du contenu de la div dans le container
-        container.appendChild(div)
+        container.appendChild(div);
     });
 }
 
-// TODO appelle de la fonction qui permet l'affichage
-affiCars()
+// TODO Affichage des voitures qui s'actualise avec le système de tri
+async function initCars() {
+    allCars = await getCars();
+    renderCars(allCars);
+
+    const select = document.getElementById('price');
+    select.addEventListener('change', function() {
+        let sortedCars = [...allCars];
+        if (this.value === "croissant") {
+            sortedCars.sort((a, b) => a.price - b.price);
+        } else if (this.value === "decroissant") {
+            sortedCars.sort((a, b) => b.price - a.price);
+        }
+        renderCars(sortedCars);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initCars);
