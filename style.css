@@ -2,7 +2,7 @@
 /* ! Fond image de la voiture pour le HEADER */
     /* Ajout de l'image comme fond pour le header sans de repeat et en mode cover comme les voitures */
 .bg-cover{
-    background-image: url('/assets/f927ae20-2779-4191-9330-5ccb32ce2f05.jpg');
+    background-image: url('f927ae20-2779-4191-9330-5ccb32ce2f05.jpg');
     background-size:cover;
     background-repeat: no-repeat;
     background-position: center;
