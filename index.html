@@ -71,7 +71,6 @@
 
         <!-- *Barre Search -->
         <div>
-            <!-- *SEARCH -->
             <!-- ! DIV générale contenant les inputs et le button submit -->
             <div class="bg-custom d-flex justify-content-center align-items-center gap-5 
                 d-lg-flex flex-lg-row align-items-lg-stretch m-lg-5
@@ -114,9 +113,11 @@
             <div>
                 <h2>7 Résultats</h2>
             </div>
-            <div class="ms-md-auto col-3">
+            <div id="filter-price" class="ms-md-auto col-3">
                 <select name="price" id="price" class="form-select">
-                    <option value="">Prix Croissant</option>
+                    <option value="all">Filtre des prix</option>
+                    <option value="croissant">Prix Croissant</option>
+                    <option value="decroissant">Prix Décroissant</option>
                 </select>
             </div>
         </div>
